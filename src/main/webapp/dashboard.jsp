@@ -21,24 +21,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
-<div class="tab col-lg-4" style="padding-left:0px;padding-right: 0px">
-        <button type="button" class="tablink" onclick="compose()">Compose new email</button>
-        <button type="button" class="tablink" onclick="getReceivedMessages()">Inbox</button>
 
-=======
-<%--<div style="height: 60px;--%>
-    <%--padding: 1em;--%>
-    <%--color: lightgray;--%>
-    <%--background-color: black;--%>
-    <%--clear: left;--%>
-    <%--text-align: center;">--%>
-<%--</div>--%>
 <div class="tab col-lg-4" style="padding-left:0px;padding-right: 0px">
         <button type="button" class="tablink" onclick="compose()">Compose new email</button>
         <button type="button" class="tablink" onclick="getReceivedMessages()">Inbox</button>
         <%--<button type="button" class="tablink" onclick="">Setting</button>--%>
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
 </div>
 <div class="col-lg-8">
     <div id="composediv" class="tabcontent">
@@ -72,13 +59,6 @@
         <table id="inbox" class="table">
         </table><br>
     </div>
-<<<<<<< HEAD
-    <div id="draftdiv" class="tabcontent">
-
-    </div>
-=======
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
-
 </div>
 
 </body>
@@ -90,14 +70,6 @@
     }
     $(document).ready(function () {
         debugger;
-<<<<<<< HEAD
-
-=======
-        // if (checkSessionValidity()==="0"){
-        //     alert("logged out");
-        // }
-        getAccounts();
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
         getReceivedMessages();
     });
     function checkSessionValidity() {
@@ -110,7 +82,7 @@
         });
     }
 
-<<<<<<< HEAD
+
     //This function is designed for populating dropdown list using ajax and jquery.
     // call it from within $(document).ready(function ()) mentioned above
      // function getAccounts() {
@@ -136,30 +108,8 @@
 
      function getReceivedMessages() {
         $("#composediv")[0].style.display='none';
-=======
-     function getAccounts() {
-         debugger;
-         $.ajax({
-             url:'/ds/logandreg/getusers',
-             type:'GET',
-             success:function () {console.log("onsuccess");},
-             complete:function (res) {
-                 debugger;
-                 var list = JSON.parse(res.responseText);
-                 $.each(list,function (index,el) {
-                     debugger;
-                     $("#dropdown").append($("<option></option>")
-                         .attr("value",el.userName).text(el.userName)
-                     )
-                 });
-             }
-         });
-     }
-
-     function getReceivedMessages() {
-        $("#composediv")[0].style.display='none';
          // $("#settingdiv")[0].style.display='none';
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
+
 
          $("#inbox tr").remove();
         $.ajax({
@@ -194,40 +144,26 @@
                         }else {$("table tr")[0].style.fontWeight='normal';}
                         $("#inbox").append(tr+td1+td2+td3+td4+td5);
                     }
-<<<<<<< HEAD
-=======
 
                     // $("#inbox")[0].style.display = 'block';
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
                     $("#inboxdiv")[0].style.display = 'block';
                 }
             }
         });
      }
-     function markAsRead(i) {
-         debugger;
-
-         $.ajax({
-<<<<<<< HEAD
-             url: '/ds/email/changestat',
-             type: "POST",
-             data: {id: i},
-             complete: function (e) {
-                 debugger;
-                 if (e.status === 200) {
-                     $("table tr i")[0].style.fontWeight = 'normal';
-=======
-             url:'/ds/email/changestat',
-             type:"POST",
-             data:{id:i},
-             complete:function (e) {
-                 debugger;
-                 if (e.status === 200){
-                     $("table tr i")[0].style.fontWeight='normal';
->>>>>>> 8fbdff2484ed3bffbf8c69826d6cd615077194c0
-                 }
-             }
-         });
-     }
+     // function markAsRead(i) {
+     //     debugger;
+     //     $.ajax({
+     //         url: '/ds/email/changestat',
+     //         type: "POST",
+     //         data: {id: i},
+     //         complete: function (e) {
+     //             debugger;
+     //             if (e.status === 200) {
+     //                 $("table tr i")[0].style.fontWeight = 'normal';
+     //             }
+     //         }
+     //     });
+     // }
 </script>
 </html>

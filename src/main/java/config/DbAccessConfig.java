@@ -39,7 +39,6 @@ public class DbAccessConfig {
         try {
         sessionFactoryBean.scanPackages("model");
         sessionFactoryBean.addProperties(getHibernateProperties());
-        sessionFactoryBean.addAnnotatedClasses(PersonDto.class);
 
         } catch (Exception e) {
             e.getStackTrace();

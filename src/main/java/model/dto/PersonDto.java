@@ -1,8 +1,11 @@
 package model.dto;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Component
 @Entity
 @Table(name = "Account")
 public class PersonDto implements Serializable{

@@ -1,6 +1,7 @@
 package controller;
 
 import model.dao.PersonDao;
+import model.daoImpl.PersonDaoImpl;
 import model.dto.EmailDto;
 import model.dto.PersonDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,14 @@ public class LogAndReg {
     @Autowired
     private PersonDao personDao;
 
+    @Autowired
+    private PersonDto personDto;
+
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(@RequestParam("user") String userName,
                         @RequestParam("pass") String password,
                               Model model){
-        PersonDto personDto=personDao.authorizeUser(userName,password);
+        personDto = personDao.authorizeUser(userName,password);
         if (personDto!=null){
             model.addAttribute("invalid","");
             model.addAttribute("user",personDto);
@@ -43,8 +47,8 @@ public class LogAndReg {
     public String register(@RequestParam("user") String username,@RequestParam("pass") String password,
                            @RequestParam("first") String firstName,@RequestParam("last") String lastName
                            ){
-        PersonDto personDto=new PersonDto(username,password,firstName,lastName);
-        personDao.saveNewAccount(personDto);
+        personDto = new PersonDto(username,password,firstName,lastName);
+        personDao.save(personDto);
 
         return "index";
     }

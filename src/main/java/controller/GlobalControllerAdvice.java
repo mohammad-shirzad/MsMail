@@ -1,6 +1,7 @@
 package controller;
 
 import model.dao.PersonDao;
+import model.daoImpl.PersonDaoImpl;
 import model.dto.PersonDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,7 +17,7 @@ public class GlobalControllerAdvice {
 
     @ModelAttribute("users")
     public List<String> getUsers(){
-        List<PersonDto> list = personDao.getAllAccounts();
+        List<PersonDto> list = personDao.getAll();
         List<String> users = new ArrayList<String>();
         Iterator<PersonDto> iterator = list.iterator();
         while (iterator.hasNext()) {

@@ -1,10 +1,10 @@
 package controller;
 
-import model.dao.PersonDao;
-import model.daoImpl.PersonDaoImpl;
 import model.dto.EmailDto;
 import model.dto.PersonDto;
+import model.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,19 +15,19 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/logandreg")
-public class LogAndReg {
+public class LogAndRegController {
 
+    @Qualifier("PersonService")
     @Autowired
-    private PersonDao personDao;
+    private PersonService personService;
 
-    @Autowired
     private PersonDto personDto;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(@RequestParam("user") String userName,
                         @RequestParam("pass") String password,
                               Model model){
-        personDto = personDao.authorizeUser(userName,password);
+        personDto = personService.authorizeUser(userName, password);
         if (personDto!=null){
             model.addAttribute("invalid","");
             model.addAttribute("user",personDto);
@@ -48,7 +48,7 @@ public class LogAndReg {
                            @RequestParam("first") String firstName,@RequestParam("last") String lastName
                            ){
         personDto = new PersonDto(username,password,firstName,lastName);
-        personDao.save(personDto);
+        personService.saveEntity(personDto);
 
         return "index";
     }

@@ -1,6 +1,5 @@
 package config;
 
-import model.dto.PersonDto;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +7,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
+//import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+
 @Configuration
-@ComponentScan(basePackages = {"model","config"})
+@EnableTransactionManagement
+@ComponentScan({"model", "config"})
 @PropertySource("classpath:database.properties")
 public class DbAccessConfig {
 
@@ -33,25 +37,37 @@ public class DbAccessConfig {
     }
 
     @Bean
-    public SessionFactory getSessionFactory() {
-        LocalSessionFactoryBuilder sessionFactoryBean=new LocalSessionFactoryBuilder(getDataSource());
+    public LocalSessionFactoryBean getSessionFactory() {
+
+        LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
         try {
-        sessionFactoryBean.scanPackages("model");
-        sessionFactoryBean.addProperties(getHibernateProperties());
-
+            factoryBean.setDataSource(getDataSource());
+            factoryBean.setPackagesToScan("model", "config");
+            factoryBean.setHibernateProperties(getHibernateProperties());
+            factoryBean.afterPropertiesSet();
         } catch (Exception e) {
             e.getStackTrace();
         }
-        return sessionFactoryBean.buildSessionFactory();
+        return factoryBean;
     }
 
     private Properties getHibernateProperties() {
         Properties hibernateProp = new Properties();
         hibernateProp.put("hibernate.dialect",env.getProperty("hibernate.dialect"));
         hibernateProp.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+        hibernateProp.put("hibernate.current_session_context_class", "thread");
         hibernateProp.put("hibernate.format_sql",
                 env.getProperty("hibernate.format_sql"));
         return hibernateProp;
+    }
+
+    @Bean
+    @Autowired
+    public HibernateTransactionManager hibernateTransactionManager(SessionFactory sessionFactory) {
+        HibernateTransactionManager transactionManager
+                = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory);
+        return transactionManager;
     }
 }

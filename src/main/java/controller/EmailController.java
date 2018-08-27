@@ -6,7 +6,10 @@ import model.daoImpl.EmailDaoImpl;
 import model.daoImpl.PersonDaoImpl;
 import model.dto.EmailDto;
 import model.dto.PersonDto;
+import model.service.EmailService;
+import model.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,20 +18,22 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/email")
-public class Email {
+public class EmailController {
 
+    @Qualifier("EmailService")
     @Autowired
-    private EmailDaoImpl emailRepository;
+    private EmailService emailService;
 
+    @Qualifier("PersonService")
     @Autowired
-    private PersonDaoImpl personRepository;
+    private PersonService personService;
 
     @RequestMapping(value = "/sendemail",method = RequestMethod.POST)
     public String sendEmail(@ModelAttribute(name = "emailDto") EmailDto emailDto,
                             Model model) {
 
-        emailRepository.sendEmail(emailDto);
-        PersonDto personDto = (PersonDto) personRepository.getUserByUserName(emailDto.getFrom());
+        emailService.sendEmail(emailDto);
+        PersonDto personDto = personService.getUserByUserName(emailDto.getFrom());
         model.addAttribute("user",personDto);
         return "dashboard";
     }
@@ -36,7 +41,7 @@ public class Email {
     @RequestMapping(value = "/getinbox")
     @ResponseBody
     public String getReceivedMessages(@RequestParam("user") String user){
-        List<EmailDto> emailDtoList = emailRepository.getEmailsByToAccount(user);
+        List<EmailDto> emailDtoList = emailService.getEmailsByToAccount(user);
         String res = new Gson().toJson(emailDtoList);
 
         return res;
@@ -45,6 +50,6 @@ public class Email {
     @RequestMapping(value = "/changestat")
     @ResponseBody
     public void changeRecievedMessageStat(@RequestParam("id") int id){
-        emailRepository.changeMailStatus(id);
+        emailService.changeEmailReadStatus(id);
     }
 }

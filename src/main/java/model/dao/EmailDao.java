@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface EmailDao<T> extends BaseDao<EmailDto> {
+public interface EmailDao extends BaseDao<EmailDto> {
 //     List<EmailDto> getEmailsByToAccount(String toUser);
 //     void sendEmail(EmailDto emailDto);
 //     void changeEmailReadStatus(int id);

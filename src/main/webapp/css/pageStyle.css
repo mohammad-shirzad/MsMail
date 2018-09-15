@@ -1,55 +1,55 @@
-*{box-sizing: border-box}
-#navbar{
-    background-color: lightgray;
-    height: 60px;
-    line-height: 55px;
-    margin-bottom: 5px;
-}
-#welcome{
+.nav.nav-tabs {
     float: left;
-    font-weight: bold;
-    font-size: 160%;
-    color: black;
-}
-#signout{
-    float: right;
-    font-weight: bold;
-    font-size: 120%;
-    color: black;
-}
-.tab{
-    border: 1px solid #ccc;
-    /*background-color: #f1f1f1;*/
-    background-color: whitesmoke;
-    width: 30%;
-    height: auto;
-}
-.tab button:hover {
-    /*background-color: #ddd;*/
-    background-color: gray;
-    padding:22px 1px 20px 15px ;
-}
-.tab button{
     display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 1px 20px 15px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
+    /*margin-right: 20px;*/
+    border-bottom: 0;
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
 }
-.tabcontent{
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    background: transparent;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #007bff !important;
+    border-color: transparent !important;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+}
+
+.tab-content > .active {
+    display: block;
+    background: transparent;
+    min-height: max-content;
+}
+
+.nav.nav-tabs {
     float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
-    border-left: none;
-    height: auto;
+    display: block;
+    width: inherit;
+    /*margin-right: 20px;*/
+    border-bottom: 0;
+    border-right: 1px solid transparent;
+    /*padding-right: 15px;*/
 }
-.tab button.active {
-    background-color: #ccc;
+
+.col-lg-3, .col-lg-6 {
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+}
+
+ul {
+    width: inherit;
 }

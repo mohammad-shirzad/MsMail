@@ -14,8 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-//import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"model", "config"})
@@ -59,6 +57,7 @@ public class DbAccessConfig {
         hibernateProp.put("hibernate.current_session_context_class", "thread");
         hibernateProp.put("hibernate.format_sql",
                 env.getProperty("hibernate.format_sql"));
+        hibernateProp.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         return hibernateProp;
     }
 

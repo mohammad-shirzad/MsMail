@@ -39,7 +39,11 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
     @Override
     public void save(T t){
+        session = getSession();
+        Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(t);
+        transaction.commit();
+        session.close();
     }
     @Override
     public List<T> getAll(){

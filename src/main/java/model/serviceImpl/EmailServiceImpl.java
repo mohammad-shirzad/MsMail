@@ -15,7 +15,7 @@ public class EmailServiceImpl extends BaseServiceImpl<EmailDto> implements Email
 
     @Qualifier("EmailDao")
     @Autowired
-    EmailDao<EmailDto> emailDao;
+    EmailDao emailDao;
 
     @Override
     public List<EmailDto> getEmailsByToAccount(String toUser) {

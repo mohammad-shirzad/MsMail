@@ -1,3 +1,8 @@
-<nav class="nav nav-bar-fixed" id="navbar">
-    <p id="welcome">Welcome dear ${user.firstName} ${user.lastName}</p><a id="signout" href="${pageContext.request.contextPath}/ds/logandreg/logout">sign out</a>
-</nav>
+<div class="row">
+    <div class="col-lg-6">
+        <h4>welcome dear ${user.firstName} ${user.lastName}</h4>
+    </div>
+    <div class="col-lg-6">
+        <p style="float: right;"><a href="index.jsp">Sign out</a></p>
+    </div>
+</div>

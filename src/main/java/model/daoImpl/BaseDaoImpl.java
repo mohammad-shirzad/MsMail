@@ -27,7 +27,7 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
     public BaseDaoImpl(SessionFactory sessionFactory) {
         try {
             this.sessionFactory = sessionFactory;
-            this.session = sessionFactory.getCurrentSession();
+//            this.session = sessionFactory.getCurrentSession();
             clazz = (Class) ((ParameterizedType) getClass()
                     .getGenericSuperclass()).getActualTypeArguments()[0];
         }catch (Exception e){

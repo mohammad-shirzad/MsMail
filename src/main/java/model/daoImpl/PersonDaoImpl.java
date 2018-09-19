@@ -4,7 +4,6 @@ import model.dao.PersonDao;
 import model.dto.PersonDto;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 @Repository("PersonDao")
 public class PersonDaoImpl extends BaseDaoImpl<PersonDto> implements PersonDao {

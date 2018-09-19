@@ -3,10 +3,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
-<%@ include file="nav-bar.html" %>
 <head>
 
-    <link href="${pageContext.request.contextPath}/css/table" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/pageStyle.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,6 +13,14 @@
 
 </head>
 <body>
+<div class="container row">
+    <div class="col-lg-6">
+        <h4>welcome dear ${user.firstName} ${user.lastName}</h4>
+    </div>
+    <div class="col-lg-6">
+        <p style="float: right;"><a href="/ds/logandreg/logout">Sign out</a></p>
+    </div>
+</div>
 <div class="container row">
     <div class="col-lg-3">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

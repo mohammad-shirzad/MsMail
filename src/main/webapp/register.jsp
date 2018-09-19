@@ -10,20 +10,26 @@
 <head>
     <title>Title</title>
     <link href="${pageContext.request.contextPath}/css/main.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/ds/logandreg/register" method="post">
-    <div style="transform: translateY(20%)">
-            <label for="first">FirstName</label>
-            <input type="text" name="first" id="first"/>
-            <label for="last">LastName</label>
-            <input type="text" name="last" id="last"/>
-            <label for="user">UserName</label>
-            <input type="text" name="user" id="user"/>
-            <label for="pass">Password</label>
-            <input type="password" name="pass" id="pass"/>
-        <button type="submit" class="button-login">Sign up</button>
-    </div>
-</form>
+<div class="shadowbox" style="transform: translateY(20%)">
+    <form action="${pageContext.request.contextPath}/ds/logandreg/register" method="post">
+        <label for="first">FirstName</label>
+        <input type="text" name="first" id="first" class="form-control"/>
+        <label for="last">LastName</label>
+        <input type="text" name="last" id="last" class="form-control"/>
+        <label for="user">UserName</label>
+        <input type="text" name="user" id="user" class="form-control"/>
+        <label for="pass">Password</label>
+        <input type="password" name="pass" id="pass" class="form-control"/>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign up</button>
+    </form>
+</div>
+
 </body>
 </html>

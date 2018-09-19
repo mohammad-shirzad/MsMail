@@ -1,9 +1,6 @@
 package controller;
 
 import com.google.gson.Gson;
-import model.dao.EmailDao;
-import model.daoImpl.EmailDaoImpl;
-import model.daoImpl.PersonDaoImpl;
 import model.dto.EmailDto;
 import model.dto.PersonDto;
 import model.service.EmailService;
@@ -13,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -29,13 +27,13 @@ public class EmailController {
     private PersonService personService;
 
     @RequestMapping(value = "/sendemail",method = RequestMethod.POST)
-    public String sendEmail(@ModelAttribute(name = "emailDto") EmailDto emailDto,
-                            Model model) {
-
+    public ModelAndView sendEmail(@ModelAttribute(name = "emailDto") EmailDto emailDto,
+                                  Model model) {
+        ModelAndView mav = new ModelAndView("dashboard");
         emailService.sendEmail(emailDto);
         PersonDto personDto = personService.getUserByUserName(emailDto.getFrom());
         model.addAttribute("user",personDto);
-        return "dashboard";
+        return mav;
     }
 
     @RequestMapping(value = "/getinbox")

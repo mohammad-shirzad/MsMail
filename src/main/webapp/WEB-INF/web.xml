@@ -6,4 +6,7 @@
           version="3.0"
           metadata-complete="true">
   <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <welcome-file>welcome.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -31,7 +31,7 @@ public class EmailController {
                                   Model model) {
         ModelAndView mav = new ModelAndView("dashboard");
         emailService.sendEmail(emailDto);
-        PersonDto personDto = personService.getUserByUserName(emailDto.getFrom());
+        PersonDto personDto = personService.getUserByEmail(emailDto.getFrom());
         model.addAttribute("user",personDto);
         return mav;
     }

@@ -15,8 +15,8 @@ public class PersonDto implements Serializable{
 
     private int id;
 
-    @Column(name = "UserName",length = 20)
-    private String userName;
+    @Column(name = "Email", length = 50)
+    private String email;
 
     @Column(name = "Password",length = 20)
     private String password;
@@ -35,12 +35,12 @@ public class PersonDto implements Serializable{
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -67,9 +67,8 @@ public class PersonDto implements Serializable{
         this.lastName = lastName;
     }
 
-    public PersonDto(String userName, String password, String firstName, String lastName) {
-
-        this.userName = userName;
+    public PersonDto(String email, String password, String firstName, String lastName) {
+        this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;

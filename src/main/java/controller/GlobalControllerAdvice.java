@@ -23,7 +23,7 @@ public class GlobalControllerAdvice {
         List<String> users = new ArrayList();
         Iterator<PersonDto> iterator = list.iterator();
         while (iterator.hasNext()) {
-            String userName = iterator.next().getUserName();
+            String userName = iterator.next().getEmail();
             users.add(userName);
         }
         return users;

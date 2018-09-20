@@ -16,8 +16,8 @@ public class PersonServiceImpl extends BaseServiceImpl<PersonDto> implements Per
     PersonDao personDao;
 
     @Override
-    public PersonDto authorizeUser(String userName, String password) {
-        PersonDto personDto = personDao.getInstanceByField("UserName", userName);
+    public PersonDto authorizeUser(String email, String password) {
+        PersonDto personDto = personDao.getInstanceByField("Email", email);
         if (personDto != null && personDto.getPassword().equals(password)) {
             return personDto;
         }
@@ -25,8 +25,8 @@ public class PersonServiceImpl extends BaseServiceImpl<PersonDto> implements Per
     }
 
     @Override
-    public PersonDto getUserByUserName(String userName) {
-        return personDao.getInstanceByField("UserName", userName);
+    public PersonDto getUserByEmail(String email) {
+        return personDao.getInstanceByField("Email", email);
     }
 
     @Override

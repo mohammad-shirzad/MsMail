@@ -13,8 +13,8 @@ public class PersonDaoImpl extends BaseDaoImpl<PersonDto> implements PersonDao {
     }
 
     @Override
-    public PersonDto authorizeUser(String userName, String password) {
-        return (PersonDto) session.createQuery("from PersonDto where userName = " + userName + " and password = " + password).list().get(0);
+    public PersonDto authorizeUser(String email, String password) {
+        return (PersonDto) session.createQuery("from PersonDto where email = " + email + " and password = " + password).list().get(0);
     }
 
 }

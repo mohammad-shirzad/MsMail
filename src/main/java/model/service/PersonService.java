@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 
 public interface PersonService extends BaseService<PersonDto> {
-    PersonDto authorizeUser(String userName, String password);
+    PersonDto authorizeUser(String email, String password);
 
-    PersonDto getUserByUserName(String userName);
+    PersonDto getUserByEmail(String email);
 }

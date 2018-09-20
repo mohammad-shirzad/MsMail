@@ -17,8 +17,8 @@
 <div class="shadowbox">
     <f:form action="${pageContext.request.contextPath}/ds/logandreg/login"
             method="post" modelAttribute="loginform">
-        <f:label path="userName">Username:</f:label>
-        <f:input path="userName" id="user" cssClass="form-control" aria-describedby="emailHelp"
+        <f:label path="email">Username:</f:label>
+        <f:input path="email" id="email" cssClass="form-control" aria-describedby="emailHelp"
                  placeholder="Enter email"/>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
@@ -34,36 +34,7 @@
         </div>
 
     </f:form>
-    <%--<form action="${pageContext.request.contextPath}/ds/logandreg/login" method="post">--%>
-    <%--&lt;%&ndash;<div class="form-group">&ndash;%&gt;--%>
-    <%--<label for="user">Email address</label>--%>
-    <%--<input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp"--%>
-    <%--placeholder="Enter email"/>--%>
-    <%--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<div class="form-group">&ndash;%&gt;--%>
-    <%--<label for="pass">Password</label>--%>
-    <%--<input type="password" class="form-control" id="pass" name="pass" placeholder="Password"/>--%>
-    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-    <%--<div class="form-check">--%>
-
-        <%--</div>--%>
-    <%--<button type="submit" class="btn btn-primary">Login</button>--%>
-    <%--</form>--%>
 </div>
-
-<%--<div>--%>
-<%--<form  action="${pageContext.request.contextPath}/ds/logandreg/login" method="post">--%>
-<%--<label for="user">Username</label><br>--%>
-<%--<input  type="text" name="user" id="user" ><br>--%>
-
-<%--<label for="pass">Password</label><span class="question"><a>Forgot password?</a></span><br>--%>
-<%--<input  type="password" name="pass" id="pass" ><br>--%>
-
-<%--<button class="button-login" type="submit" >Sign In</button><br>--%>
-
-<%--</form>--%>
-<%--</div>--%>
 
 </body>
 </html>

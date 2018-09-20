@@ -18,13 +18,13 @@
 </head>
 <body>
 <div class="shadowbox" style="transform: translateY(20%)">
-    <form action="${pageContext.request.contextPath}/ds/logandreg/register" method="post">
+    <form id="reg">
         <label for="first">FirstName</label>
         <input type="text" name="first" id="first" class="form-control"/>
         <label for="last">LastName</label>
         <input type="text" name="last" id="last" class="form-control"/>
-        <label for="user">UserName</label>
-        <input type="text" name="user" id="user" class="form-control"/>
+        <label for="email">UserName</label>
+        <input type="email" name="email" id="email" class="form-control"/>
         <label for="pass">Password</label>
         <input type="password" name="pass" id="pass" class="form-control"/>
         <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign up</button>

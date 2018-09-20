@@ -34,7 +34,7 @@ public class LogAndRegController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute("login") PersonDto personDto) {
-        PersonDto authUser = personService.authorizeUser(personDto.getUserName(), personDto.getPassword());
+        PersonDto authUser = personService.authorizeUser(personDto.getEmail(), personDto.getPassword());
         if (authUser != null) {
             ModelAndView mav = new ModelAndView("dashboard");
             mav.addObject("user", authUser);

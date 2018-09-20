@@ -53,7 +53,7 @@
                 <table>
                     <tr>
                         <td>From:</td>
-                        <td><f:input path="from" value="${user.userName}" readonly="true"/></td>
+                        <td><f:input path="from" value="${user.email}" readonly="true"/></td>
                     </tr>
                     <tr>
                         <td>To:</td>
@@ -115,7 +115,7 @@
      //             $.each(list,function (index,el) {
      //                 debugger;
      //                 $("#dropdown").append($("<option></option>")
-     //                     .attr("value",el.userName).text(el.userName)
+    //                     .attr("value",el.email).text(el.email)
      //                 )
      //             });
      //         }
@@ -128,7 +128,7 @@
         $.ajax({
             url:'/ds/email/getinbox',
             type:"GET",
-            data:{user: "${user.userName}" },
+            data: {user: "${user.email}"},
             success:function () {
                 console.log("success");
             },
@@ -157,19 +157,5 @@
             }
         });
      }
-     // function markAsRead(i) {
-     //     debugger;
-     //     $.ajax({
-     //         url: '/ds/email/changestat',
-     //         type: "POST",
-     //         data: {id: i},
-     //         complete: function (e) {
-     //             debugger;
-     //             if (e.status === 200) {
-     //                 $("table tr i")[0].style.fontWeight = 'normal';
-     //             }
-     //         }
-     //     });
-     // }
 </script>
 </html>

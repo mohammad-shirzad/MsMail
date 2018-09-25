@@ -23,13 +23,40 @@
         <input type="text" name="first" id="first" class="form-control"/>
         <label for="last">LastName</label>
         <input type="text" name="last" id="last" class="form-control"/>
-        <label for="email">UserName</label>
+        <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control"/>
         <label for="pass">Password</label>
         <input type="password" name="pass" id="pass" class="form-control"/>
+
+
         <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign up</button>
     </form>
 </div>
 
 </body>
+<script>
+
+    $("#reg").on('submit', function (e) {
+        var user = {};
+        e.preventDefault();
+        var data = $("#reg");
+        var user = {
+            firstname: data[0].elements[0].value,
+            lastname: data[0].elements[1].value,
+            email: data[0].elements[2].value,
+            password: data[0].elements[3].value
+        };
+        debugger;
+        $.ajax({
+            url: "http://localhost:8080/mailws/user/save_user",
+            headers: {"access.control.allow.origin": "*"},
+            method: "post",
+            data: user,
+            complete: function (e) {
+                console.log(e);
+                debugger;
+            }
+        });
+    })
+</script>
 </html>

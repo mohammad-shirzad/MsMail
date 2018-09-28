@@ -46,6 +46,7 @@
             email: data[0].elements[2].value,
             password: data[0].elements[3].value
         };
+        user = user.stringify();
         debugger;
         $.ajax({
             url: "http://localhost:8080/mailws/user/save_user",

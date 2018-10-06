@@ -37,20 +37,18 @@
 <script>
 
     $("#reg").on('submit', function (e) {
-        var user = {};
         e.preventDefault();
         var data = $("#reg");
-        var user = {
+        var obj = {
             firstname: data[0].elements[0].value,
             lastname: data[0].elements[1].value,
             email: data[0].elements[2].value,
             password: data[0].elements[3].value
         };
-        user = user.stringify();
+        var user = JSON.stringify(obj);
         debugger;
         $.ajax({
-            url: "http://localhost:8080/mailws/user/save_user",
-            headers: {"access.control.allow.origin": "*"},
+            url: "http://localhost:8080/user/save_user?user=",
             method: "post",
             data: user,
             complete: function (e) {

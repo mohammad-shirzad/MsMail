@@ -54,10 +54,9 @@ public class DbAccessConfig {
         Properties hibernateProp = new Properties();
         hibernateProp.put("hibernate.dialect",env.getProperty("hibernate.dialect"));
         hibernateProp.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-        hibernateProp.put("hibernate.current_session_context_class", "thread");
+//        hibernateProp.put("hibernate.current_session_context_class", "thread");
         hibernateProp.put("hibernate.format_sql",
                 env.getProperty("hibernate.format_sql"));
-        hibernateProp.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         return hibernateProp;
     }
 

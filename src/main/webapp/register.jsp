@@ -45,12 +45,17 @@
             email: data[0].elements[2].value,
             password: data[0].elements[3].value
         };
-        var user = JSON.stringify(obj);
         debugger;
         $.ajax({
             url: "http://localhost:8080/user/save_user?user=",
             method: "post",
-            data: user,
+            data: {user: JSON.stringify(obj)},
+            dataType: 'json',
+            beforeSend: function (x) {
+                if (x && x.overrideMimeType) {
+                    x.overrideMimeType("application/json");
+                }
+            },
             complete: function (e) {
                 console.log(e);
                 debugger;

@@ -6,9 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="721b328e-278c-465c-9d75-1ba04491c463" name="Default" comment="used spring data jpa with hibernate for database connection and pure spring mvc in all forms">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="721b328e-278c-465c-9d75-1ba04491c463" name="Default" comment="removed unnecessary directories">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/BaseDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/EmailDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/PersonDao.java" beforeDir="false" />
@@ -121,8 +120,11 @@
       <file leaf-file-name="BaseDto.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/BaseDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="118">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,8 +162,8 @@
       <file leaf-file-name="Email.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="208">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
                 <element signature="e#578#579#0" expanded="true" />
                 <element signature="e#606#607#0" expanded="true" />
@@ -519,7 +521,7 @@
       <workItem from="1541532930604" duration="2892000" />
       <workItem from="1541835903611" duration="8881000" />
       <workItem from="1541924649016" duration="8121000" />
-      <workItem from="1542050790634" duration="1980000" />
+      <workItem from="1542050790634" duration="3100000" />
     </task>
     <task id="LOCAL-00001" summary="made connection between MsMail and its webservice project by AJAX">
       <created>1538849232901</created>
@@ -549,11 +551,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542052690541</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="used spring data jpa with hibernate for database connection and pure spring mvc in all forms">
+      <created>1542052816061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542052816061</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removed unnecessary directories">
+      <created>1542053277168</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542053277168</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114310000" />
+    <option name="totallyTimeSpent" value="115430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -607,7 +623,8 @@
     <MESSAGE value="made connection between MsMail and its webservice project by AJAX" />
     <MESSAGE value="added few properties to AJAX to make it work correctly" />
     <MESSAGE value="used spring data jpa with hibernate for database connection and pure spring mvc in all forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="used spring data jpa with hibernate for database connection and pure spring mvc in all forms" />
+    <MESSAGE value="removed unnecessary directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary directories" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -888,20 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/BaseDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/EmailService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -950,10 +953,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/welcome.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/BaseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Email.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="208">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="e#578#579#0" expanded="true" />
             <element signature="e#606#607#0" expanded="true" />

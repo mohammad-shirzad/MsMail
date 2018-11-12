@@ -6,20 +6,26 @@ What I am going to do is to design a multilevel architecture to separate DAO lay
 **Framework and ORM**
 
 1. Spring MVC 5
-2. Hibernate 
+2. Hibernate 5
 3. Spring IOC
 
 **Database**
 
-Oracle 12c Release 2 with 2 tables, inbox and account
+MySQL 5 is used with 2 tables for USER and EMAIL
 
 **Future plan**
 
 As I am proceeding with this project, I am going to add Drafts, Outbox and Setting.
 
-**Next move**
+**Last changes**
 
-I am going to add a map to registeration page to get exact location of new user and add an option in dashboard to change location in case the user moved from his/her former place. On top of that, I will use a Restful API using Spring boot latest version for new users' registeration.
+Spring Data JPA is used as base repository to decrease lines of codes for database implementation. Furthermore, concept of inheritance in Hibernate is learned and implemented. 
+
+**Next move(s)**
+
+1. User registeration process is going to be converted to Restful API instead of Spring MVC form
+2. Hibernate relation is going to be utilized
+3. Spring security will be used to secure the application
 
 **Suggestions**
 

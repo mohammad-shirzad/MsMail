@@ -16,7 +16,7 @@
 
 <div class="shadowbox">
     <f:form action="${pageContext.request.contextPath}/ds/logandreg/login"
-            method="post" modelAttribute="loginform">
+            method="post" modelAttribute="login">
         <f:label path="email">Username:</f:label>
         <f:input path="email" id="email" cssClass="form-control" aria-describedby="emailHelp"
                  placeholder="Enter email"/>
@@ -28,8 +28,10 @@
         <%--<f:button type="submit" class="btn btn-primary" cssClass="form-control">Login</f:button>--%>
         <div style="margin-top:10px">
             <button type="submit" class="btn btn-primary">Login</button>
+                <%--<span class="question">Not a member?<a--%>
+                <%--href="${pageContext.request.contextPath}/register.jsp">Sign up</a></span>--%>
             <span class="question">Not a member?<a
-                    href="${pageContext.request.contextPath}/register.jsp">Sign up</a></span>
+                    href="${pageContext.request.contextPath}/ds/logandreg/showReg">Sign up</a></span>
 
         </div>
 

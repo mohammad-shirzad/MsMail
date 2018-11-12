@@ -49,15 +49,15 @@
             </table>
         </div>
         <div class="tab-pane" id="compose" role="tabpanel">
-            <f:form action="/ds/email/sendemail" method="post" modelAttribute="emailDto">
+            <f:form action="/ds/email/sendemail" method="post" modelAttribute="email">
                 <table>
                     <tr>
                         <td>From:</td>
-                        <td><f:input path="from" value="${user.email}" readonly="true"/></td>
+                        <td><f:input path="sender" value="${user.email}" readonly="true"/></td>
                     </tr>
                     <tr>
                         <td>To:</td>
-                        <td><f:select path="to">
+                        <td><f:select path="receiver">
                             <f:options items="${users}"/>
                         </f:select></td>
                     </tr>
@@ -142,8 +142,8 @@
 
                         var id = table[i]["id"];
                         var tr="<tr class='makenormal'>";
-                        var td1="<td>"+table[i]["from"]+"</td>";
-                        var td2="<td>"+table[i]["to"]+"</td>";
+                        var td1 = "<td>" + table[i]["sender"] + "</td>";
+                        var td2 = "<td>" + table[i]["receiver"] + "</td>";
                         var td3="<td>"+table[i]["title"]+"</td>";
                         var td4="<td>"+table[i]["content"]+"</td>";
                         var td5="<td><button type='button' onclick='markAsRead("+id+")'>"+"mark as read"+"</td></tr>";

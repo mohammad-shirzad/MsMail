@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MailBox@localhost" uuid="35aeec5e-b569-483e-a146-59e9f66d3053">
+    <data-source source="LOCAL" name="MAILBOX@localhost" uuid="3e76fd98-794b-44ac-8494-b631230e5bb9">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/MailBox</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/MAILBOX</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

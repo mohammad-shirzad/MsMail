@@ -1,31 +1,40 @@
 package controller;
 
-import model.dao.PersonDao;
-import model.daoImpl.PersonDaoImpl;
-import model.dto.PersonDto;
+import dao.UserDao;
+import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import service.UserService;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @ControllerAdvice
 public class GlobalControllerAdvice {
 
-    @Qualifier("PersonDao")
+    //    @Qualifier("PersonDao")
     @Autowired
-    private PersonDao personDao;
+    private UserService userService;
 
     @ModelAttribute("users")
     public List<String> getUsers(){
-        List<PersonDto> list = personDao.getAll();
-        List<String> users = new ArrayList();
-        Iterator<PersonDto> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            String userName = iterator.next().getEmail();
-            users.add(userName);
+        try {
+            List<User> list = userService.getAllUsers();
+            List<String> users = new ArrayList();
+            if (list != null) {
+                Iterator<User> iterator = list.iterator();
+                while (iterator.hasNext()) {
+                    String userName = iterator.next().getEmail();
+                    users.add(userName);
+                }
+                return users;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return users;
+        return null;
+
     }
 }

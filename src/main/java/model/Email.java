@@ -12,16 +12,16 @@ public class Email extends BaseDto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "SENDER")
+    @Column(name = "SENDER", length = 50)
     private String sender;
 
-    @Column(name = "RECEIVER")
+    @Column(name = "RECEIVER", length = 50)
     private String receiver;
 
-    @Column(name = "TITLE")
+    @Column(name = "TITLE", length = 50)
     private String title;
 
-    @Column(name = "CONTENT")
+    @Column(name = "CONTENT", length = 100)
     private String content;
 
     @Column(name = "READ_STATUS")
